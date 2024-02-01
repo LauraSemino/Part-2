@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Plane : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class Plane : MonoBehaviour
     public AnimationCurve landing;
     float timerValue;
     public Sprite[] sprites;
+    public bool landed;
+    
+    
+    
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -43,13 +48,14 @@ public class Plane : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (landed == true)
         {
             timerValue += 0.5f * Time.deltaTime;
             float interpolation = landing.Evaluate(timerValue);
             if (transform.localScale.z < 0.1f)
             {
                 Destroy(gameObject);
+                
             }
             transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, interpolation);
         }
@@ -88,7 +94,11 @@ public class Plane : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
+        if (collision.gameObject.Equals(gameObject))
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        
       
     }
     void OnTriggerExit2D(Collider2D collision)
@@ -99,7 +109,10 @@ public class Plane : MonoBehaviour
     {
         if (Vector3.Distance(currentPosition, collision.transform.position) < 0.5f)
         {
-            Destroy(gameObject);
+            if (collision.gameObject.Equals(gameObject))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
