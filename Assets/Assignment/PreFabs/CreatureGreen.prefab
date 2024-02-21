@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1325626913201026783
+--- !u!1 &6775937996560408381
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2704716753200756894}
-  - component: {fileID: 3664367695409595915}
-  - component: {fileID: 8540519833014076175}
-  - component: {fileID: 4204287317869839956}
-  - component: {fileID: 1523109449890734505}
-  - component: {fileID: 7883711720436827285}
+  - component: {fileID: 6888427451581937356}
+  - component: {fileID: 5277046907769053145}
+  - component: {fileID: 4306590494639285726}
+  - component: {fileID: 4976904049694918577}
+  - component: {fileID: 5778775902374718301}
+  - component: {fileID: 2911458271270510637}
   m_Layer: 0
   m_Name: CreatureGreen
   m_TagString: Untagged
@@ -21,28 +21,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2704716753200756894
+--- !u!4 &6888427451581937356
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325626913201026783}
+  m_GameObject: {fileID: 6775937996560408381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3664367695409595915
+--- !u!212 &5277046907769053145
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325626913201026783}
+  m_GameObject: {fileID: 6775937996560408381}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8540519833014076175
+--- !u!58 &4306590494639285726
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325626913201026783}
+  m_GameObject: {fileID: 6775937996560408381}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -123,14 +123,14 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.23}
   serializedVersion: 2
   m_Radius: 0.5047124
---- !u!50 &4204287317869839956
+--- !u!50 &4976904049694918577
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325626913201026783}
+  m_GameObject: {fileID: 6775937996560408381}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -150,31 +150,57 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1523109449890734505
+--- !u!114 &5778775902374718301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325626913201026783}
+  m_GameObject: {fileID: 6775937996560408381}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46d9b0839361bd546a19e8e4a9eb5cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  ac:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   type: 1
---- !u!95 &7883711720436827285
+  lerpDie: 0
+  lerpTimer: 0
+--- !u!95 &2911458271270510637
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325626913201026783}
+  m_GameObject: {fileID: 6775937996560408381}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 335f877353386194a9b63a1807bc7dcd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 73cac73b20850ad43a0c75ed0cb86e1b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
