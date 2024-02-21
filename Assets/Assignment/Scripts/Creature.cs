@@ -10,14 +10,17 @@ public class Creature : MonoBehaviour
     Vector2 move;
     public float speed = 4;
     Rigidbody2D rb;
+    Animator animator;
     bool clicked = false;
-    // 0 for red, 1 for blue
+    // 0 for red, 1 for green
     public float type;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        destination = Camera.main.transform.position;
     }
     private void FixedUpdate()
     {
@@ -35,6 +38,7 @@ public class Creature : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && clicked == true) 
         {
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            animator.SetTrigger("move");
             clicked = false;
         }
     }

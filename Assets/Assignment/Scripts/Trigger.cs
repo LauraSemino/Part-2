@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    //Set 0 for red, 1 for blue
+    //Set 0 for red, 1 for green
+
     public float colour;
     private void OnTriggerEnter2D(Collider2D collision)
     {
