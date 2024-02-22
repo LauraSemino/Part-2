@@ -3,10 +3,14 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class Controller : MonoBehaviour
 {
+    
+    public TextMeshProUGUI ScoreCount;
+    public static float score;
     public Slider chargeSlider;
     float charge;
     public float maxCharge = 1;
@@ -33,6 +37,9 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
+        
+        ScoreCount.text = score.ToString();
+
         if (SelectedPlayer == null) return;
 
         if (Input.GetKeyDown(KeyCode.Space)) 
@@ -53,5 +60,8 @@ public class Controller : MonoBehaviour
             //release charge
             direction = ((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)SelectedPlayer.transform.position).normalized * charge;
         }
+
+       
+
     }
 }
