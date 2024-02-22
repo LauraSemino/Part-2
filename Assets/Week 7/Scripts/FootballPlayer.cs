@@ -9,11 +9,14 @@ public class FootballPlayer : MonoBehaviour
     
     Color normal;
     SpriteRenderer sr;
+    Rigidbody2D rb;
+    public float speed = 1000;
 
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         normal = sr.color;
         Selected(false);
 
@@ -41,5 +44,9 @@ public class FootballPlayer : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = normal;
         }
+    }
+    public void Move(Vector2 direction)
+    { 
+        rb.AddForce(direction * speed);
     }
 }
